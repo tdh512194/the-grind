@@ -6,8 +6,9 @@ class Solution:
         br = False
         while not br:
             prefix = prefix + curr
-            if len(strs[0]) == 0:
-                return ""
+            # if len(strs[0]) == 0:
+            #     return ""
+            # just a tedious problem, need to check this twice
             if i > len(strs[0])-1:
                 return prefix
             curr = strs[0][i]
