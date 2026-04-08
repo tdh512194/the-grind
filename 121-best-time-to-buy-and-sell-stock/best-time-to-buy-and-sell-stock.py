@@ -1,5 +1,7 @@
 class Solution:
     def maxProfit(self, prices: List[int]) -> int:
+        # just need to maintain min_price and max_profit
+        # then go from left to right as shorted chronologically
         i = 0 # buy date
         profit = 0
         min_price = float('inf')
