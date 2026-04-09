@@ -19,11 +19,11 @@ class Solution:
                 result += symbol[cur]
                 break
             nex = s[j+1]
-            if ( 
-                ((cur == 'I') and (nex in ('V', 'X')))
-                or ((cur == 'X') and (nex in ('L', 'C')))
-                or ((cur == 'C') and (nex in ('D', 'M')))
-            ):
+            if ( symbol[cur] < symbol[nex]):
+            #     ((cur == 'I') and (nex in ('V', 'X')))
+            #     or ((cur == 'X') and (nex in ('L', 'C')))
+            #     or ((cur == 'C') and (nex in ('D', 'M')))
+            # ):
                 result += symbol[nex] - symbol[cur]
                 j = j + 2
             else:
