@@ -14,7 +14,7 @@ class Solution:
 
             to_add = a1 + a2 + carry
             newnode = ListNode(to_add%10)
-            dummyhead.val = to_add//10
+            # dummyhead.val = to_add//10
             carry = to_add//10
 
             curr.next = newnode
