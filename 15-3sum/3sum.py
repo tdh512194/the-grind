@@ -1,24 +1,32 @@
 class Solution:
     def threeSum(self, nums: List[int]) -> List[List[int]]:
         nums.sort()
+        results = []
         leng = len(nums)
-        result = []
         seen = set()
-        for k,c in enumerate(nums):
-            if (c > 0):
+        for k in range(leng-2):
+            target = nums[k]
+            if target > 0: 
                 break
-            if k == 0 or nums[k-1] < c:
-                seen = set()
-                j = k + 1
-                while j < leng:
-                    comp = - nums[k] - nums[j]
-                    if comp in seen:
-                        result.append([nums[k], nums[j], comp])
-                        while j + 1 < leng and nums[j]  == nums[j+1]:
-                            j += 1
-                    seen.add(nums[j])
-                    j += 1
-        return result
+            i = k+1
+            j = leng-1
+            while i < j:
+                current_sum = nums[i] + nums[j]
+                if current_sum == - target:
+                    to_add = [nums[k],nums[i],nums[j]]
+                    if str(to_add) not in seen:
+                        results.append(to_add)
+                        seen.add(str(to_add))
+                    else:
+                        i += 1
+                        continue
+                elif current_sum < -target:
+                    i += 1
+                    continue
+                else:
+                    j -= 1
+                    continue
+        return results
 
                     
                     
